@@ -1,0 +1,21 @@
+.header {
+    height: 80px;
+    width: 101%;
+    background-color: gray;
+    margin: -7px;
+    display: flex;
+    align-items: center;
+}
+
+.header-img {
+    height: 70px;
+    margin-left: 5px;
+}
+
+.header-text {
+    margin-left: 30px;
+    font-size: 50px;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 2;
+}
