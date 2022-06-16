@@ -1,5 +1,24 @@
 .header {
     position: sticky;
     height: 80px;
-    width: 101%;
+    width: 100%;
+}
+
+.dashboard {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: white;
+    border-right: 1px solid gray;
+    margin-left: -7px;
+}
+.content {
+    width: 81%;
+    height: 600px;
+    margin-right: -7px;
+    background-color: white;
 }
