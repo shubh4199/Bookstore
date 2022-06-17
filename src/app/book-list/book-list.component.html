@@ -1,1 +1,11 @@
-<p>book-list works!</p>
+
+<main class="grid">   
+    <div class="card" *ngFor="let bookData of booksData">
+        <img src="{{bookData['book_image']}}" alt="" class="card-image">
+        <div class="card-text">
+            <h4 class="card-title">{{bookData['title']}}</h4>
+            <p class="card-author">{{bookData['author']}}</p>
+            <strong class="card-price">₹259.00</strong>
+        </div>
+    </div>
+ </main>

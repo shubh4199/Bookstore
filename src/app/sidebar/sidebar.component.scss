@@ -1,11 +1,13 @@
 $header-height:80px;
 
 .sidebar {
+    background-color: olivedrab;
     height: calc(100vh-header-height);
     padding-left: 20px;
     display: flex;
     flex-direction: column;
     line-height: 1.5;
+    color: white;
 }
 
 .sidebar-title {
@@ -21,6 +23,7 @@ a {
     margin-left: 10px;
     display: block;
     cursor: pointer;
+    color: white;
 }
 .book-category-item:hover {
     text-decoration: underline;
