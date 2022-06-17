@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FetchingDataService } from '../fetching-data.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  sideBarData:any;
+
+  constructor(private fetchingDataService: FetchingDataService) { }
 
   ngOnInit(): void {
+    this.fetchingDataService.fetchDataToSidebar().subscribe((data:any)=>{
+      this.sideBarData = data.results;
+      console.log(this.sideBarData);
+      // for(let data of this.sideBarData){
+      //   console.log(data['display_name']);
+      //   console.log(data['list_name_encoded'])
+      // }
+    })
   }
 
+ 
 }

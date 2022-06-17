@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ActionAdventureComponent } from './action-adventure/action-adventure.component';
-import { ArtsFilmPhotographyComponent } from './arts-film-photography/arts-film-photography.component';
+import { BookListComponent } from './book-list/book-list.component';
 
 const routes: Routes = [
-  {path: '', component: ActionAdventureComponent},
-  {path: 'artsFilmPhotography', component: ArtsFilmPhotographyComponent}
+  {path: 'books', component: BookListComponent},
+  {path: 'books/:id', component: BookListComponent}
 ];
 
 @NgModule({

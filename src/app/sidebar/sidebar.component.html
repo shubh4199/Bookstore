@@ -1,15 +1,4 @@
-<div class="sidebar">
+<nav class="sidebar">
   <h3 class="sidebar-title">Books</h3>
-  <a routerLink="" routerLinkActive="active" class="book-category-item">Action & Adventure</a>
-  <a routerLink="artsFilmPhotography" routerLinkActive="active" class="book-category-item">Arts, Film & Photography</a>
-  <a routerLink="" routerLinkActive="active" class="book-category-item">Biographies, Diaries & True Accounts</a>
-  <a routerLink="" routerLinkActive="active" class="book-category-item">Business & Economics</a>
-  <a routerLink="" routerLinkActive="active" class="book-category-item">Children's & Young Adult</a>
-  <a routerLink="" routerLinkActive="active" class="book-category-item">Comics & Mangas</a>
-  <a routerLink="" routerLinkActive="active" class="book-category-item">Computing, Internet & Digital Media</a>
-  <a routerLink="" routerLinkActive="active" class="book-category-item"></a>
-  <a routerLink="" routerLinkActive="active" class="book-category-item"></a>
-  <a routerLink="" routerLinkActive="active" class="book-category-item"></a>
-  <a routerLink="" routerLinkActive="active" class="book-category-item"></a>
-  <a routerLink="" routerLinkActive="active" class="book-category-item"></a>
-</div>
+  <a class="book-category-item" *ngFor="let category of this.sideBarData">{{category['display_name']}}</a>
+</nav>
