@@ -1,9 +1,9 @@
 $header-height:80px;
-*{
-    height: 88vh;
+* {
+    height: calc(100vh - $header-height);
 }
 
-.header {
+app-header {
     position: sticky;
     height: $header-height;
     width: 100%;
@@ -14,7 +14,7 @@ $header-height:80px;
     width: 100%;
 }
 
-.sidebar {
+app-sidebar {
     width: 25%;
     height: calc(100vh-header-height);
     background-color: white;
@@ -24,7 +24,7 @@ $header-height:80px;
 .content {
     width: 75%;
     height: calc(100vh-header-height);
-    margin-right: -7px;
+    padding: auto;
     background-color: white;
     overflow: scroll;
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { FetchingDataService } from '../fetching-data.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -7,22 +8,33 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.scss']
 })
-export class BookListComponent implements OnInit {
+export class BookListComponent implements OnInit, OnDestroy {
   booksData:any;
   id:any|undefined|Object;
-  constructor(private fetchingDataService: FetchingDataService, private activatedRoute:ActivatedRoute) { }
-  ngOnInit(): void {
+  myData:any
 
-    this.activatedRoute.params.subscribe(data=>{
-      this.id=data['id']
-      console.log("id if if :",this.id)
-      this.fetchingDataService.fetchBooksInBookList(this.id).subscribe((data:any)=>{
-        this.booksData=data;
-        this.booksData=this.booksData.results['books']; 
+  notifierSubscription:Subscription=this.fetchingDataService.subjectNotifier.subscribe(data=>{
+    this.myData = data;
+  })
+
+  constructor(private fetchingDataService: FetchingDataService, private activatedRoute:ActivatedRoute) { }
+
+  ngOnInit(): void {}
+  // ngOnInit(): void {
+  //   this.activatedRoute.params.subscribe(data=>{
+  //     this.id=data['id']
+  //     console.log("id if if :",this.id)
+  //     this.fetchingDataService.fetchBooksInBookList(this.id).subscribe((data:any)=>{
+  //       this.booksData=data;
+  //       this.booksData=this.booksData.results['books']; 
         
-         console.log(this.booksData)
-      })
-    })
+  //        console.log(this.booksData)
+  //     })
+  //   })
+  // }
+
+  ngOnDestroy(): void {
+    this.notifierSubscription.unsubscribe();
   }
 }
 

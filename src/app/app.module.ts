@@ -8,13 +8,15 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 import { BookListComponent } from './book-list/book-list.component';
+import { BookCardComponent } from './book-card/book-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    BookListComponent
+    BookListComponent,
+    BookCardComponent
   ],
   imports: [
     BrowserModule,

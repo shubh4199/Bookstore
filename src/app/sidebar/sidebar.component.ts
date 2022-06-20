@@ -9,6 +9,7 @@ import { FetchingDataService } from '../fetching-data.service';
 export class SidebarComponent implements OnInit {
 
   sideBarData:any;
+ 
 
   constructor(private fetchingDataService: FetchingDataService) { }
 
@@ -21,6 +22,11 @@ export class SidebarComponent implements OnInit {
       //   console.log(data['list_name_encoded'])
       // }
     })
+  }
+
+  getData(data:any){
+    console.log("Event data:",data)
+    this.fetchingDataService.notifyAboutChange(data);
   }
 
  
