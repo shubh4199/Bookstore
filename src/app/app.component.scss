@@ -3,7 +3,7 @@ $header-height:80px;
     height: calc(100vh - $header-height);
 }
 
-app-header {
+.header {
     position: sticky;
     height: $header-height;
     width: 100%;
@@ -14,7 +14,7 @@ app-header {
     width: 100%;
 }
 
-app-sidebar {
+.sidebar {
     width: 25%;
     height: calc(100vh-header-height);
     background-color: white;

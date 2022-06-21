@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Bookstore';
+  emittedBookData:any
+
+
+  getBookData(bookData:any){
+      console.log("event clicked", bookData)    
+      this.emittedBookData=bookData
+
+  }
 }

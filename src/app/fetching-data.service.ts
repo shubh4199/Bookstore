@@ -23,6 +23,11 @@ export class FetchingDataService {
   //   return this.http.get(baseUrl);
   // }
 
+  fetchBooksInBookList(id:any){
+      const baseUrl=`https://api.nytimes.com/svc/books/v3/lists/current/${id}?api-key=4VyAuksSpZSbvy1AjnGdOGtoxsu0zWHY`;
+      return this.http.get(baseUrl);
+    }
+
   notifyAboutChange(data:any) {
     let getData;
     this.baseUrl=`https://api.nytimes.com/svc/books/v3/lists/current/${data}?api-key=4VyAuksSpZSbvy1AjnGdOGtoxsu0zWHY`;

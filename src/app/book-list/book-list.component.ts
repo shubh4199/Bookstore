@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { FetchingDataService } from '../fetching-data.service';
 import { ActivatedRoute } from '@angular/router';
@@ -9,9 +9,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./book-list.component.scss']
 })
 export class BookListComponent implements OnInit, OnDestroy {
-  booksData:any;
+  // booksData:any;
   id:any|undefined|Object;
   myData:any
+
+  @Input() booksData:any;
 
   notifierSubscription:Subscription=this.fetchingDataService.subjectNotifier.subscribe(data=>{
     this.myData = data;

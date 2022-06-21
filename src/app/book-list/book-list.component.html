@@ -1,7 +1,14 @@
 <main class="grid">   
-    <app-book-card *ngFor="let data of myData" 
+    <!-- <app-book-card *ngFor="let data of myData" 
         [cardImage]="data['book_image']"
         [cardTitle]="data['title']"
         [cardAuthor]="data['author']">
+    </app-book-card> -->
+    <app-book-card
+        *ngFor="let bookData of booksData"
+        [cardImage]="bookData['book_image']"
+        [cardTitle]="bookData['title']"
+        [cardAuthor]="bookData['author']"
+    >
     </app-book-card>
  </main>

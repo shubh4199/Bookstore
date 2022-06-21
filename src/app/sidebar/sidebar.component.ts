@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FetchingDataService } from '../fetching-data.service';
 
 @Component({
@@ -9,7 +9,8 @@ import { FetchingDataService } from '../fetching-data.service';
 export class SidebarComponent implements OnInit {
 
   sideBarData:any;
- 
+  @Output() isSidenavLinkClicked = new EventEmitter();
+  bookData:any
 
   constructor(private fetchingDataService: FetchingDataService) { }
 
@@ -27,6 +28,17 @@ export class SidebarComponent implements OnInit {
   getData(data:any){
     console.log("Event data:",data)
     this.fetchingDataService.notifyAboutChange(data);
+  }
+
+  onSideBarLinkClicked(id :any){
+
+    console.log("inside sidenav components")
+    this.fetchingDataService.fetchBooksInBookList(id).subscribe((data:any)=>{
+      console.log(data)
+      this.bookData=data.results['books']
+      this.isSidenavLinkClicked.emit(this.bookData)
+    })
+
   }
 
  
