@@ -1,10 +1,6 @@
 $header-height:80px;
-* {
-    height: calc(100vh - $header-height);
-}
 
 .header {
-    position: sticky;
     height: $header-height;
     width: 100%;
 }
@@ -12,18 +8,17 @@ $header-height:80px;
 .dashboard {
     display: flex;
     width: 100%;
+    height: calc(100vh - $header-height);
 }
 
 .sidebar {
     width: 25%;
-    height: calc(100vh-header-height);
     background-color: white;
     border-right: 1px solid gray;
     overflow: scroll;
 }
 .content {
     width: 75%;
-    height: calc(100vh-header-height);
     padding: auto;
     background-color: white;
     overflow: scroll;

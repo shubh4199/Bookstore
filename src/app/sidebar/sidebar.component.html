@@ -9,7 +9,8 @@
     class="book-category-item"
     *ngFor="let data of this.sideBarData">{{data['display_name']}}</a> -->
 
-    <a routerLink="/books"  (click)="onSideBarLinkClicked(data['list_name_encoded'])"
+  <a routerLink="/books"  (click)="onSideBarLinkClicked(data['list_name_encoded'])"
      class="book-category-item"
-    *ngFor="let data of this.sideBarData">{{data['display_name']}}</a>
+    *ngFor="let data of this.sideBarData">{{data['display_name']}}
+  </a>
 </nav>
