@@ -1,7 +1,9 @@
-<div class="header">
-  <app-header></app-header>
-</div>
+<app-header class="header"></app-header>
 
 <div class="dashboard">
-  
+  <!-- <app-sidebar class="sidebar"></app-sidebar> -->
+  <app-sidebar (onSidenavLinkClicked)="getBookData($event)" class="sidebar"></app-sidebar>
+  <div class="content">
+    <app-book-list [booksId]="emittedBookData"></app-book-list>
+  </div>
 </div>

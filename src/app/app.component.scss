@@ -1,5 +1,25 @@
+$header-height:80px;
+
 .header {
-    position: sticky;
-    height: 80px;
-    width: 101%;
+    height: $header-height;
+    width: 100%;
+}
+
+.dashboard {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - $header-height);
+}
+
+.sidebar {
+    width: 25%;
+    background-color: white;
+    border-right: 1px solid gray;
+    overflow: scroll;
+}
+.content {
+    width: 75%;
+    padding: auto;
+    background-color: white;
+    overflow: scroll;
 }

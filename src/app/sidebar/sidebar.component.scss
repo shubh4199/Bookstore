@@ -1,0 +1,29 @@
+$header-height:80px;
+
+.sidebar {
+    background-color: olivedrab;
+    height: calc(100vh-header-height);
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    color: white;
+}
+
+.sidebar-title {
+    font-size: 20px;
+    font-weight: 400;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+.book-category-item {
+    font-size: 15px;
+    margin-left: 10px;
+    display: block;
+    color: white;
+}
+.book-category-item:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,16 @@
+<main class="grid">
+  <!-- <app-book-card *ngFor="let data of myData" 
+        [cardImage]="data['book_image']"
+        [cardTitle]="data['title']"
+        [cardAuthor]="data['author']">
+    </app-book-card> -->
+  <app-book-card
+    *ngFor="let bookData of bookData"
+    [cardImage]="bookData['book_image']"
+    [cardTitle]="bookData['title']"
+    [cardAuthor]="bookData['author']"
+    [cardFavoriteId]="bookData['primary_isbn10']"
+    (emitCardFavId)="myFavoriteBookList($event)"
+  >
+  </app-book-card>
+</main>

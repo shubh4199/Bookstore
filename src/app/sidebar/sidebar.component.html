@@ -1,0 +1,16 @@
+<nav class="sidebar">
+  <h3 class="sidebar-title">Books</h3>
+  <!-- <a routerLink="/books/{{data['list_name_encoded']}}" 
+    class="book-category-item"
+   *ngFor="let data of this.sideBarData">{{data['display_name']}}
+  </a> -->
+
+  <!-- <a routerLink="/books" (click)="getData(data['list_name_encoded'])"
+    class="book-category-item"
+    *ngFor="let data of this.sideBarData">{{data['display_name']}}</a> -->
+
+  <a routerLink="/books"  (click)="onSideBarLinkClicked(data['list_name_encoded'])"
+     class="book-category-item"
+    *ngFor="let data of this.sideBarData">{{data['display_name']}}
+  </a>
+</nav>

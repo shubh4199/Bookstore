@@ -1,0 +1,16 @@
+<!-- <a routerLink="" (click)="makeFavorite()"> -->
+<div class="card">
+  <img [src]="cardImage" alt="" class="card__image" />
+  <div class="card__text">
+    <h4 class="card__title">{{ cardTitle }}</h4>
+    <p class="card__author">{{ cardAuthor }}</p>
+    <span style="font-size: 20px; color: black">
+      <!-- <i class="fa-solid fa-star"></i> -->
+      <a routerLink="" (click)="makeFavorite(cardFavoriteId)">
+          <i *ngIf="isFavorite; else elseBlock" class="fa-regular fa-star"></i>
+          <ng-template #elseBlock><i class="fa-solid fa-star"></i></ng-template>
+      </a>
+    </span>
+    <strong class="card__price">₹259.00</strong>
+  </div>
+</div>
