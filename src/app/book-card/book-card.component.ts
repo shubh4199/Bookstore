@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FetchingDataService } from '../fetching-data.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -10,6 +11,9 @@ import { FetchingDataService } from '../fetching-data.service';
 export class BookCardComponent implements OnInit {
 
   isFavorite=true;
+  popupDuration={
+    duration:3000
+  }
 
   @Input() cardImage:String|undefined;
   @Input() cardTitle:String|undefined;
@@ -19,7 +23,7 @@ export class BookCardComponent implements OnInit {
   @Input() cardFavoriteId:string|undefined;
   @Output() emitCardFavId =new EventEmitter();
 
-  constructor(private fetchDataService:FetchingDataService) { }
+  constructor(private fetchDataService:FetchingDataService,private _snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.fetchDataService.byDefaultFavBookId().subscribe((favBookId:any)=>{
@@ -31,9 +35,11 @@ export class BookCardComponent implements OnInit {
   }
 
   makeFavorite(primaryId:any) {
-    
-    
-
+    if(this.isFavorite){
+      this._snackBar.open("Added to favourites","X",this. popupDuration);
+    }else{
+      this._snackBar.open("Removed from favourites","X",this. popupDuration );
+    }
     this.isFavorite = !this.isFavorite;
     this.emitCardFavId.emit(primaryId);
   }
