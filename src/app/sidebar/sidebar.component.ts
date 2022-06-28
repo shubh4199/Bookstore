@@ -9,7 +9,7 @@ import { FetchingDataService } from '../fetching-data.service';
 export class SidebarComponent implements OnInit {
 
   sideBarData:any;
-  @Output() isSidenavLinkClicked = new EventEmitter();
+  @Output() onSidenavLinkClicked = new EventEmitter();
   bookData:any
 
   constructor(private fetchingDataService: FetchingDataService) { }
@@ -32,13 +32,13 @@ export class SidebarComponent implements OnInit {
 
   onSideBarLinkClicked(id :any){
 
-    console.log("inside sidenav components")
-    this.fetchingDataService.fetchBooksInBookList(id).subscribe((data:any)=>{
-      console.log(data)
-      this.bookData=data.results['books']
-      this.isSidenavLinkClicked.emit(this.bookData)
-    })
-
+    console.log("inside sidenav components",id)
+    // this.fetchingDataService.fetchBooksInBookList(id).subscribe((data:any)=>{
+    //   console.log(data)
+    //   this.bookData=data.results['books']
+    //   this.isSidenavLinkClicked.emit(this.bookData)
+    // })
+    this.onSidenavLinkClicked.emit(id)
   }
 
  

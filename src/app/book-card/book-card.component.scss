@@ -68,10 +68,16 @@
   &__price {
     padding-top: 5px;
     font-size: 13px;
+    margin-left: 10px;
   }
 
   &:hover {
     background-color: whitesmoke;
-    transform: scale(1.05);
+    transform: scale(1.1);
+  }
+
+  a {
+    color: black
   }
 }
+ 

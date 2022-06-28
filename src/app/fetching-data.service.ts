@@ -37,4 +37,8 @@ export class FetchingDataService {
     })
   }
 
+  byDefaultFavBookId() {
+    return this.http.get('../assets/favoriteBook/favorite-item.json')
+  }
+
 }

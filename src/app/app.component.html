@@ -2,8 +2,8 @@
 
 <div class="dashboard">
   <!-- <app-sidebar class="sidebar"></app-sidebar> -->
-  <app-sidebar (isSidenavLinkClicked)="getBookData($event)" class="sidebar"></app-sidebar>
+  <app-sidebar (onSidenavLinkClicked)="getBookData($event)" class="sidebar"></app-sidebar>
   <div class="content">
-    <app-book-list [booksData]="emittedBookData"></app-book-list>
+    <app-book-list [booksId]="emittedBookData"></app-book-list>
   </div>
 </div>
